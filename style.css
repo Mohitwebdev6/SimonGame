@@ -27,21 +27,9 @@ body{
 .purple{
     background-color: #63aac0;
 }
-.btn:active{
+.flash{
     background-color: white;
 }
-/* .red{
-    animation: change;
-    animation-duration: 1s;
-} */
-@keyframes change{
-    0%{
-        background-color: #d95980;
-    }
-    50%{
-        background-color: white;
-    }
-    100%{
-        background-color: #d95980;
-    }
+.userFlash{
+    background-color: green;
 }
