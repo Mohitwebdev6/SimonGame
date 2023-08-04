@@ -8,12 +8,14 @@ let level = 0;
 let hScore = 0;
 let h2 = document.querySelector('h2');
 let high = document.querySelector('h3');
+let startBtn=document.querySelector('.start-btn');
 
-document.addEventListener("keypress", function () {
+startBtn.addEventListener("click", function () {
     if (started == false) {
         started = true;
+        setTimeout(levelUp,1000);
     }
-    setTimeout(levelUp(), 1000);
+
 })
 function btnUserFlash(btn) {
     btn.classList.add("userFlash");
@@ -44,7 +46,7 @@ function checkAns(idx) {
         }
     }
     else {
-        h2.innerHTML = `Game Over! <br> Your Score is ${level}<br> press any key to restart `;
+        h2.innerHTML = `Game Over! <br> Your Score is ${level}<br> press Restart `;
         document.querySelector('body').style.backgroundColor = "red";
         setTimeout(() => {
             document.querySelector('body').style.backgroundColor = "white";
@@ -53,6 +55,8 @@ function checkAns(idx) {
             hScore = level;
             high.innerText = `High Score- ${hScore}`;
         }
+        startBtn.innerText="RESTART";
+
         reset();
     }
 }
