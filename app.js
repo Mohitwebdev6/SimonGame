@@ -8,12 +8,12 @@ let level = 0;
 let hScore = 0;
 let h2 = document.querySelector('h2');
 let high = document.querySelector('h3');
-let startBtn=document.querySelector('.start-btn');
+let startBtn = document.querySelector('.start-btn');
 
 startBtn.addEventListener("click", function () {
     if (started == false) {
         started = true;
-        setTimeout(levelUp,1000);
+        setTimeout(levelUp, 1000);
     }
 
 })
@@ -53,13 +53,14 @@ function checkAns(idx) {
         }, 100);
         if (level > hScore) {
             hScore = level;
-            high.innerText = `High Score- ${hScore}`;
+            localStorage.setItem('hScore', hScore);
         }
-        startBtn.innerText="RESTART";
+        startBtn.innerText = "RESTART";
 
         reset();
     }
 }
+
 function btnPress() {
     let btn = this;
     btnUserFlash(btn);
@@ -79,6 +80,8 @@ function reset() {
     gameSeq = [];
     userSeq = [];
     level = 0;
+    high.innerText = `High Score- ${localStorage.getItem('hScore')}`;
 }
+high.innerText = `High Score- ${localStorage.getItem('hScore')}`;
 
 
